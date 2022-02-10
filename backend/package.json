@@ -11,11 +11,18 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.2",
-    "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.9"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.28.0",
+    "jsdoc": "^3.6.10",
     "nodemon": "^2.0.15"
   }
 }

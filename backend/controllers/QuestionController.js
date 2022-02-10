@@ -1,10 +1,8 @@
+// const jwt = require('jsonwebtoken');
+
 class QuestionController {
-
-    constructor() {
-    }
-
-    async save(req, res) {
-        return res.status(200).send("Question to ask")
+    async save (req, res) {
+        return res.status(200).send('Question to ask')
     }
 }
 
