@@ -1,13 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const QuestionController = require('../controllers/QuestionController')
-const UserController = require('../controllers/UserController')
+const { save, getQuestion } = require('../controllers/QuestionController')
+const { login } = require('../controllers/UserController')
+const { auth } = require('../middleware/auth')
 
-router.get('/api', QuestionController.token)
-router.get('/api/test', QuestionController.testToken)
-router.get('/api/register/:user/:email', UserController.save)
-router.get('/api/question', QuestionController.save)
-router.get('/api/checkanswer/:num', QuestionController.save)
-router.get('/api/results', QuestionController.save)
+router.get('/api/login/:user/:email', login)
+router.get('/api/question', auth, getQuestion)
+router.get('/api/checkanswer/:num', auth, save)
+router.get('/api/results', auth, save)
 
 module.exports = router
