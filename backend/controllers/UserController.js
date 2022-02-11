@@ -1,13 +1,19 @@
 const jwt = require('jsonwebtoken')
+const { register } = require('../services/UserService')
 
 const login = async (req, res) => {
-    console.log(req.query.user)
-    const token = jwt.sign({ user: req.params.user, email: req.params.email }, process.env.KEY, { expiresIn: 3600 })
+    const user = req.params.user
+    const email = req.params.email
+
+    const token = jwt.sign({ user, email }, process.env.KEY, { expiresIn: 3600 })
     const response = {
-        user: req.params.user,
-        email: req.params.email,
+        user,
+        email,
         token
     }
+
+    register({ user, email })
+
     return res.json(response)
 }
 
