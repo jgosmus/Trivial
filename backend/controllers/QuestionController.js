@@ -6,10 +6,9 @@ const getQuestion = async (req, res) => {
 
     // const question = await Question.findOne().skip(random).exec()
 
-    startGame((result) => {
-        console.log(result)
-        res.json(result)
-    })
+    const result = await startGame()
+    console.log(result)
+    res.json(result)
 }
 
 const save = async (req, res) => {

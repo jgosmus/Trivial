@@ -1,9 +1,8 @@
 const Question = require('../models/question')
 
-const startGame = (callback) => {
-    Question.find({}).exec((_, result) => {
-        callback(result)
-    })
+const startGame = async () => {
+    const result = await Question.find({})
+    return result
 }
 
 module.exports = { startGame }
